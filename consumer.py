@@ -7,7 +7,7 @@ my_file = Dataset("/tmp/my_file.txt")
 
 with DAG(
     dag_id = "consumer",
-    shedule = [my_file],
+    schedule = [my_file],
     start_date = datetime(2023, 9, 7),
     catchup = False
 ):
