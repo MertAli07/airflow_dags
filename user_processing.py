@@ -47,12 +47,11 @@ with DAG('user_processing', start_date=datetime(2022, 9, 5),
         """
     )
 
-    is_api_available = HttpSensor(
-        task_id = "is_api_available",
-        http_conn_id = "user_api",
-        endpoint = "api/",
-
-    )
+    # is_api_available = HttpSensor(
+    #     task_id = "is_api_available",
+    #     http_conn_id = "user_api",
+    #     endpoint = "api/",
+    # )
 
     extract_user = SimpleHttpOperator(
         task_id = "extract_user",
@@ -73,4 +72,5 @@ with DAG('user_processing', start_date=datetime(2022, 9, 5),
         python_callable = _store_user
     )
 
-    create_table >> is_api_available >> extract_user >> process_user >> store_user
+    create_table >> extract_user >> process_user >> store_user
+    # is_api_available
