@@ -56,7 +56,7 @@ with DAG('user_processing', start_date=datetime(2022, 9, 5),
     )
 
     process_user = PythonOperator(
-        task_id = "extract_user",
+        task_id = "process_user",
         python_callable = _process_user
     )
 
