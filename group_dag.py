@@ -4,7 +4,7 @@ from airflow.operators.subdag import SubDagOperator
 
 import os
 import sys
-sys.path.append("C:\Users\Admin\Desktop\vscode repo\airflowExercise\subdags\subdag_downloads.py")
+sys.path.append("airflowExercise\subdags\subdag_downloads.py")
 from subdags.subdag_downloads import subdag_downloads
  
 from datetime import datetime
